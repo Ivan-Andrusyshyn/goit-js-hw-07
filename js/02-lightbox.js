@@ -29,7 +29,7 @@ captionPosition:'bottom',
 captionDelay: 250,
 scrollZoom:false 
 });
-gallery.on('show.simplelightbox', function () {	
+galleryOpen.on('show.simplelightbox', function () {	
 });
 galleryOpen.on('error.simplelightbox', function (e) {
 	console.log(e); 
