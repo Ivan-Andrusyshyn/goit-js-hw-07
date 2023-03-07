@@ -4,7 +4,6 @@ const gallery = document.querySelector('.gallery')
 const createItems = createNewItems(galleryItems)
 
 gallery.insertAdjacentHTML('beforeend', createItems)
-gallery.addEventListener('click',openGallaryItemClick)
 
 function createNewItems(galleryItems){
     return galleryItems.map(({preview, original, 
@@ -16,12 +15,7 @@ return `<a class="gallery__item" href=${original}>
 }).join('')
 }
 
-function openGallaryItemClick(evt){
- evt.preventDefault()
-let openItemImg = evt.target.closest('a').getAttribute('href')
-return openItemImg
 
-}
 let galleryOpen = new SimpleLightbox('.gallery a',{
 captionSelector:'img',
 captionsData:'alt',
@@ -29,11 +23,7 @@ captionPosition:'bottom',
 captionDelay: 250,
 scrollZoom:false 
 });
-galleryOpen.on('show.simplelightbox', function () {	
-});
-galleryOpen.on('error.simplelightbox', function (e) {
-	console.log(e); 
-});
+
 
 
     
